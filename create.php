@@ -6,7 +6,3 @@
         <h1>Testanto o template CRIAR CONTATO</h1>
 
     </main>
-
-<?php 
-    include_once("template/footer.php");
-?>
