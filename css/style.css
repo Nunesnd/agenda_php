@@ -45,6 +45,10 @@ nav img {
     color: blue;
 }
 
+form.delete-form{
+    display: inline-block;
+}
+
 .delete-icon{
     color: red;
 }
@@ -86,4 +90,12 @@ nav img {
 }
 #create-form button {
     margin-top: 15px;
+}
+
+/* Regra recursividade */
+
+@media(max-width: 480px){
+    #home-link{
+        display: none;
+    }
 }

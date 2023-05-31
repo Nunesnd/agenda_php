@@ -36,6 +36,50 @@
                 $error = $e->getMessage();
                 echo "Erro: $error";
             }
+
+        }else if($data["type"] === "edit"){
+
+                $name = $data["name"];
+                $phone = $data["phone"];
+                $email = $data["email"];
+                $observations = $data["observations"];
+                $id = $data["id"];
+
+                $query = "UPDATE contacts SET name = :name, phone = :phone, email = :email, observations = :observations WHERE id = :id";
+
+                $stmt = $conn->prepare($query);
+
+                $stmt->bindParam(":name", $name);
+                $stmt->bindParam(":phone", $phone);
+                $stmt->bindParam(":email", $email);
+                $stmt->bindParam(":observations", $observations);
+                $stmt->bindParam(":id", $id);
+
+                try {
+        
+                    $stmt->execute();
+                    $_SESSION["msg"] = "Contato atualizado com sucesso!";
+            
+                } catch (PDOException $e) {
+                    $error = $e->getMessage();
+                    echo "Erro: $error";
+                }
+
+        }else if($data["type"] === "delete"){
+            $id = $data["id"];
+            $query = "DELETE FROM contacts WHERE id = :id";
+            $stmt = $conn->prepare($query);
+            $stmt->bindParam(":id", $id);
+
+            try {
+        
+                $stmt->execute();
+                $_SESSION["msg"] = "Contato Excluído com sucesso!";
+        
+            } catch (PDOException $e) {
+                $error = $e->getMessage();
+                echo "Erro: $error";
+            }
         }
 
         //redireciona para o index mostrando o novo contato
