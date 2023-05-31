@@ -9,6 +9,9 @@
 # so most of the project and solution files are the same as VS files,
 # only prefixed by an `at`.
 
+#INFORMADOS PELO DEV
+/config/connection.php
+
 #Build Directories
 [Dd]ebug/
 [Rr]elease/
