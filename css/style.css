@@ -76,3 +76,14 @@ nav img {
     max-width: 500px;
     margin: 0 auto;
 }
+
+#create-form{
+    margin: 5px;
+}
+
+#create-form label {
+    margin-top: 15px;
+}
+#create-form button {
+    margin-top: 15px;
+}

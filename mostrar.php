@@ -6,7 +6,7 @@
 
     <div class="w-50 p-3">
         
-        <a class="btn btn-outline-primary" href="<?php echo $BASE_URL; ?>index.php">Voltar</a>
+        <?php include_once("template/buttom_back.html");?>
 
         <h1 id="main-title"> <?= $contact["name"] ?> </h1>
         <p><b>Telefone:</b></p>
