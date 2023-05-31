@@ -1,12 +1,44 @@
 <?php 
     include_once("template/header.php");
 ?>
-    <main>
 
-        <h1>Testanto o template INDEX</h1>
+<div class="container">
+    <?php if(isset($prinMsg) && $prinMsg != ''):?>
+        <p id="msg"><?= $prinMsg ?></p>
+    <?php endif;?>
 
-    </main>
+    <h1 id="main-title">Minha agenda</h1>
 
-<?php 
-    include_once("template/footer.php");
-?>
+    <?php if(count($contacts) > 0): ?>
+        
+        <table class="table" id="contacts-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($contacts as $contact): ?>
+                    <tr>
+                        <td scope="row"> <?= $contact["id"] ?> </td>
+                        <td scope="row"> <?= $contact["name"] ?> </td>
+                        <td scope="row"> <?= $contact["email"] ?> </td>
+                        <td class="actions">
+                            <a href="#"><i class="fas fa-eye check-icon"></i></a>
+                            <a href="#"><i class="far fa-edit edit-icon"></i></a>
+                            <button type="submit"><i class="fas fa-times delete-icon"></i></button>
+                        </td>
+                    </tr>
+                <?php endforeach;?>
+            </tbody>
+        </table>
+
+    <?php else: ?>
+
+        <p id="empty-list-text">Ainda não há contatos, <a href="<?php echo $BASE_URL; ?>create.php">Clique aqui para adicionar novo contato</a></p>
+
+    <?php endif; ?>
+</div>
