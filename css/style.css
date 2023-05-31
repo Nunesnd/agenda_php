@@ -6,3 +6,7 @@
     box-sizing: border-box;
 }
 
+nav img {
+    width: 70px;
+    padding: 5px;
+}
